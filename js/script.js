@@ -69,6 +69,9 @@ $(document).ready(function () {
     slidesToScroll: 1,
     arrows: false,
     dots: false,
+    autoplay: true,
+    autoplaySpeed: 1700,
+    speed: 800,
     responsive: [
       {
         breakpoint: 1025,
@@ -80,4 +83,44 @@ $(document).ready(function () {
       },
     ],
   });
+
+  $(".zoom-slider").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    centerMode: true,
+    centerPadding: "0px",
+    infinite: true,
+    arrows: false,
+    dots: false,
+    autoplay: true,
+    autoplaySpeed: 1700,
+    speed: 800,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          centerMode: false,
+          slidesToShow: 1,
+        },
+      },
+    ],
+  });
+
+  $(".banner-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    dots: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    speed: 800,
+  });
+
+  AOS.init();
 });

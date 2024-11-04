@@ -3,7 +3,7 @@
 @import "fonts";
 
 .video-info {
-  margin: 40px 0;
+  margin: 40px 0 20px;
   @media (max-width: 767px) {
     margin: 20px 0;
   }
@@ -14,6 +14,7 @@
       @include align-center;
       @media (max-width: 767px) {
         @include flex-wrap;
+        text-align: center;
       }
       .video-btn {
         border-radius: 50px;
@@ -27,6 +28,9 @@
         @media (max-width: 1024px) {
           font-size: 13px;
         }
+        @media (max-width: 767px) {
+          margin: auto;
+        }
         img {
           margin-left: 15px;
         }
@@ -37,6 +41,7 @@
         @media (max-width: 767px) {
           width: 100%;
           margin-bottom: 20px;
+          text-align: center;
         }
         b {
           font-size: 34px;
@@ -179,6 +184,7 @@
 }
 
 .send-wrap {
+  margin-bottom: 20px;
   .wrapper {
     @include flex;
     .img {
@@ -226,8 +232,10 @@
         font-size: 36px;
         margin-bottom: 40px;
         @media (max-width: 767px) {
-          font-size: 28px;
-          margin-bottom: 30px;
+          font-size: 24px;
+          max-width: 300px;
+          width: 100%;
+          margin: 0 auto 30px;
         }
       }
       .send-form {
@@ -290,6 +298,16 @@
       z-index: 0;
       @media (max-width: 767px) {
         width: 100%;
+        .slider-navigation {
+          button {
+            &.slick-next {
+              right: -10px;
+            }
+            &.slick-prev {
+              left: -10px;
+            }
+          }
+        }
       }
       .info-slider {
         margin-bottom: 0;
@@ -356,7 +374,9 @@
           @include flex;
           @include align-center;
           @media (max-width: 767px) {
-            font-size: 13px;
+            font-size: 12px;
+            margin-right: 8px;
+            margin-bottom: 8px;
           }
           .icon {
             margin-left: 10px;
@@ -377,7 +397,7 @@
 }
 
 .information {
-  margin: 55px 0 15px;
+  margin: 55px 0 40px;
   @media (max-width: 767px) {
     margin-top: 15px;
   }
@@ -391,6 +411,9 @@
     @include flex;
     @media (max-width: 1024px) {
       min-height: 44vw;
+    }
+    @media (max-width: 767px) {
+      padding-bottom: 50vw;
     }
     .bg {
       position: absolute;
@@ -413,7 +436,7 @@
       .item {
         position: relative;
         z-index: 0;
-        background: rgba(40, 70, 72, 0.6);
+        background: rgba(40, 70, 72, 0.85);
         border: 3px solid rgba(255, 255, 255, 0.3);
         border-radius: 10px;
         padding: 20px 10px;
@@ -559,6 +582,188 @@
             color: white;
             font-weight: 500;
           }
+        }
+      }
+    }
+  }
+}
+
+.zoom-slider-wrap {
+  margin: 40px 0;
+  .zoom-slider {
+    border-radius: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    .item {
+      @include flex;
+      @include dir-col;
+      @include justify-center;
+      align-items: center;
+      background: rgba(40, 70, 72, 0.6);
+      padding: 20px;
+      transition: 0.3s;
+      margin: 20px 5px;
+      border-radius: 20px;
+      @media (max-width: 767px) {
+        background: #284648;
+        margin: 0;
+      }
+      &.slick-current {
+        @media (min-width: 768px) {
+          background: #284648;
+          transform: scale(1.15);
+          border-radius: 16px;
+          overflow: hidden;
+        }
+      }
+      img {
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      b {
+        color: white;
+        display: block;
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      p {
+        color: white;
+        font-size: 14px;
+        text-align: center;
+        .bold {
+          font-size: 14px;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.banner {
+  margin: 20px 0;
+  .wrapper {
+    @include flex;
+    @include justify-between;
+    @media (max-width: 767px) {
+      @include dir-col;
+    }
+    .banner-info {
+      width: calc(60% - 10px);
+      background: #284648;
+      padding: 80px 70px 80px 40px;
+      border-radius: 20px;
+      position: relative;
+      z-index: 0;
+      min-height: 490px;
+      @include flex;
+      @include dir-col;
+      @include justify-center;
+      @media (max-width: 1024px) {
+        padding: 50px 20px;
+        min-height: 450px;
+      }
+      @media (max-width: 767px) {
+        width: 100%;
+        margin-bottom: 20px;
+        min-height: auto;
+      }
+      &:after {
+        content: "";
+        background: url(../img/banner-info-style-bg.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: -1;
+      }
+      h2 {
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        @media (max-width: 1024px) {
+          font-size: 32px;
+          margin-bottom: 20px;
+        }
+      }
+      p {
+        font-size: 15px;
+        margin-bottom: 30px;
+        color: white;
+        @media (max-width: 1024px) {
+          font-size: 14px;
+          margin-bottom: 20px;
+        }
+        &.address-text {
+          @include flex;
+          @include align-center;
+          img {
+            margin-right: 10px;
+          }
+        }
+      }
+      .buttons {
+        @include flex;
+        @media (max-width: 1024px) {
+          @include dir-col;
+        }
+        a {
+          margin-right: 15px;
+          border-radius: 50px;
+          padding: 4px;
+          padding-left: 14px;
+          font-size: 14px;
+          font-weight: 600;
+          color: #284648;
+          background: white;
+          @include flex;
+          @include align-center;
+          @media (max-width: 1024px) {
+            margin-bottom: 10px;
+            margin-right: 0;
+            align-self: flex-start;
+          }
+          &.green {
+            background: #b9e4c9;
+          }
+          .icon {
+            margin-left: 10px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #284648;
+            min-width: 32px;
+            @include flex;
+            img {
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+    .banner-slider {
+      width: calc(40% - 10px);
+      margin-bottom: 0;
+      @media (max-width: 767px) {
+        width: 100%;
+      }
+      .item {
+        min-height: 490px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        border-radius: 20px;
+        @media (max-width: 1024px) {
+          min-height: 450px;
+        }
+        @media (max-width: 767px) {
+          min-height: 66vw;
         }
       }
     }
