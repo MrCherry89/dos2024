@@ -1,0 +1,336 @@
+body,
+html {
+  overflow-x: hidden;
+  font-family: "Inter";
+  &.overflow {
+    overflow: hidden !important;
+  }
+}
+
+body {
+  @include flex;
+  @include dir-col;
+  @include justify-between;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter";
+}
+
+input,
+textarea {
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  transition: 0.3s;
+  background: none;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.wrapper {
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.slider-navigation {
+  button {
+    @include flex;
+    width: 40px;
+    background: #fff;
+    height: 40px;
+    border-radius: 50%;
+    @media (max-width: 767px) {
+      width: 40px;
+      height: 40px;
+    }
+    &:hover {
+      opacity: 0.5;
+    }
+    img {
+      margin: auto;
+      @media (max-width: 767px) {
+        width: 20px;
+      }
+    }
+    &:before {
+      content: none;
+    }
+    &.slick-prev {
+      left: 20px;
+      img {
+        transform: rotate(180deg);
+      }
+    }
+    &.slick-next {
+      right: 20px;
+    }
+  }
+}
+
+.slick-dots {
+  bottom: 30px;
+  @include flex;
+  @include align-center;
+  @include justify-center;
+  li {
+    width: 12px;
+    height: 12px;
+    margin: 0 2px;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.15);
+    -webkit-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.15);
+    button {
+      width: 12px;
+      height: 12px;
+      padding: 0;
+      background: #dfdbda;
+      border-radius: 50px;
+      &:before {
+        content: none;
+      }
+    }
+    &.slick-active {
+      button {
+        background: #b9e4c9;
+      }
+    }
+  }
+}
+
+.planning-solutions {
+  margin: 15px 0;
+}
+
+.planning-solutions-wrap {
+  @include flex;
+  @media (max-width: 767px) {
+    flex-direction: column-reverse;
+  }
+  .slider-nav {
+    .item {
+      height: 140px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 15px 0;
+      opacity: 0.5;
+      @media (max-width: 767px) {
+        margin: 0 6px;
+        height: auto;
+        border-radius: 8px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      &.slick-current {
+        opacity: 1;
+      }
+    }
+  }
+  .slider-for {
+    .item {
+      @include flex;
+      border-radius: 10px;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .left {
+    width: 240px;
+    min-width: 240px;
+    margin-right: 15px;
+    border-radius: 20px;
+    background: #e6ecea;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    @include flex;
+    @include align-center;
+    padding: 30px 20px;
+    @media (max-width: 767px) {
+      width: 100%;
+      margin: 0;
+      margin-top: 20px;
+      padding: 20px 15px;
+      display: block;
+    }
+  }
+  .right {
+    width: calc(100% - 255px);
+    padding: 30px 40px;
+    position: relative;
+    z-index: 0;
+    border-radius: 20px;
+    background: #e6ecea;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.05);
+    @media (max-width: 1024px) {
+      padding: 40px 30px 40px;
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      padding: 20px;
+    }
+    .arrow-wrap {
+      @include flex;
+      @include align-center;
+      @include justify-between;
+      margin-top: 20px;
+      .slider-navigation {
+        @include flex;
+        position: static;
+        z-index: 10;
+        width: 90px;
+        overflow: hidden;
+        border-radius: 40px;
+        @include align-center;
+        @include justify-between;
+        @media (max-width: 767px) {
+          width: 70px;
+        }
+        button {
+          position: static;
+          transform: translate(0, 0);
+          @include flex;
+          width: 40px;
+          background: #284648;
+          height: 40px;
+          border-radius: 50%;
+          @media (max-width: 767px) {
+            width: 30px;
+            height: 30px;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
+          img {
+            margin: auto;
+            @media (max-width: 767px) {
+              width: 14px;
+            }
+          }
+          &:before {
+            content: none;
+          }
+          &.slick-prev {
+            img {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    h2 {
+      font-size: 40px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #284648;
+      @media (max-width: 1024px) {
+        font-size: 30px;
+      }
+      @media (max-width: 767px) {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+.green-arr-btn {
+  background: #284648;
+  border: 1px solid #284648;
+  color: white;
+  border-radius: 50px;
+  @include inline-flex;
+  @include align-center;
+  padding: 5px 10px 5px 15px;
+  font-size: 14px;
+  font-weight: 600;
+  .icon {
+    width: 32px;
+    height: 32px;
+    @include flex;
+    border-radius: 50%;
+    background: #b9e4c9;
+    margin-left: 10px;
+    transition: 0.3s;
+    svg {
+      margin: auto;
+      width: 15px;
+      path {
+        transition: 0.3s;
+        fill: #284648;
+      }
+    }
+  }
+  &:hover {
+    background: #fff;
+    color: #284648;
+    .icon {
+      background: #284648;
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+    .icon2 {
+      svg {
+        circle {
+          fill: #284648;
+        }
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+}
