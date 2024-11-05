@@ -93,6 +93,7 @@ $(document).ready(function () {
     arrows: false,
     dots: false,
     autoplay: true,
+    focusOnSelect: true,
     autoplaySpeed: 1700,
     speed: 800,
     responsive: [
