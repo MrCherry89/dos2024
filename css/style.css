@@ -1163,6 +1163,11 @@ a:focus {
   border-radius: 20px;
   border: 3px solid rgba(255, 255, 255, 0.3);
 }
+@media (max-width: 767px) {
+  .zoom-slider-wrap .zoom-slider .slick-list {
+    margin: 0 -10px;
+  }
+}
 .zoom-slider-wrap .zoom-slider .item {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1185,6 +1190,7 @@ a:focus {
   .zoom-slider-wrap .zoom-slider .item {
     background: #284648;
     margin: 0;
+    margin: 0 10px;
   }
 }
 @media (min-width: 768px) {
